@@ -2,7 +2,7 @@
 
 /**
  * @file main.cpp
- * @brief Ultrasonic Distance Measurement System
+ * @brief Embedded distance measurement using HC-SR04 ultrasonic sensor.
  * @author ansh-codr
  * @date 2026-02-21
  */
@@ -15,8 +15,10 @@ float distance;
 
 void setup() {
     Serial.begin(9600);
+
     pinMode(TRIG_pin, OUTPUT);
     pinMode(ECHO_pin, INPUT);
+
     Serial.println("Ultrasonic Sensor System Initialized");
 }
 
@@ -29,4 +31,12 @@ void loop() {
     digitalWrite(TRIG_pin, LOW);
 
     duration = pulseIn(ECHO_pin, HIGH);
+
+    distance = duration * 0.034 / 2;
+
+    Serial.print("Distance: ");
+    Serial.print(distance);
+    Serial.println(" cm");
+
+    delay(500);
 }
