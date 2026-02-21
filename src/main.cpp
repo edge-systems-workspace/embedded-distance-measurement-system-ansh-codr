@@ -21,4 +21,12 @@ void setup() {
 }
 
 void loop() {
+    digitalWrite(TRIG_pin, LOW);
+    delayMicroseconds(2);
+
+    digitalWrite(TRIG_pin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TRIG_pin, LOW);
+
+    duration = pulseIn(ECHO_pin, HIGH);
 }
