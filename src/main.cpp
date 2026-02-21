@@ -14,6 +14,10 @@ long duration;
 float distance;
 
 void setup() {
+    Serial.begin(9600);
+    pinMode(TRIG_pin, OUTPUT);
+    pinMode(ECHO_pin, INPUT);
+    Serial.println("Ultrasonic Sensor System Initialized");
 }
 
 void loop() {
