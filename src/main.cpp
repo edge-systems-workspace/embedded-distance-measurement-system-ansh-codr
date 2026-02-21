@@ -7,6 +7,12 @@
  * @date 2026-02-21
  */
 
+int TRIG_pin = 9;
+int ECHO_pin = 10;
+
+long duration;
+float distance;
+
 void setup() {
 }
 
